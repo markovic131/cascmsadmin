@@ -11,11 +11,11 @@
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <?php if (is_module_enabled('Notification')): ?>
-            @include('notification::partials.notifications')
+                @include('notification::partials.notifications')
             <?php endif; ?>
-            <li><a href="{{ URL::to('/') }}" target="_blank"><i class="fa fa-eye"></i> {{trans('core::core.general.view website')}}</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <li><a href="{{ URL::to('/') }}" target="_blank"><i class="fa fa-eye"></i> {{ trans('core::core.general.view website') }}</a></li>
+            {{--<li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-flag"></i>
                     <span>
                         {{ LaravelLocalization::getCurrentLocaleName()  }}
@@ -31,7 +31,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </li>
+            </li>--}}
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -40,7 +40,7 @@
                         <?php if ($user->present()->fullname() != ' '): ?>
                             <?= $user->present()->fullName(); ?>
                         <?php else: ?>
-                            <em>{{trans('core::core.general.complete your profile')}}.</em>
+                            <em>{{ trans('core::core.general.complete your profile') }}.</em>
                         <?php endif; ?>
                         <i class="caret"></i>
                     </span>
@@ -53,14 +53,14 @@
                             <?php if ($user->present()->fullname() != ' '): ?>
                                 <?= $user->present()->fullname(); ?>
                             <?php else: ?>
-                                <em>{{trans('core::core.general.complete your profile')}}.</em>
+                                <em>{{ trans('core::core.general.complete your profile') }}.</em>
                             <?php endif; ?>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <a href="{{ URL::route('logout')  }}" class="btn btn-default btn-flat">
-                            {{trans('core::core.general.sign out')}}
+                            {{ trans('core::core.general.sign out') }}
                         </a>
                     </li>
                 </ul>
